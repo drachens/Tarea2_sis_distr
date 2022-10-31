@@ -1,0 +1,7 @@
+docker build --tag sas:1.0 .
+docker run -it --name sastest -p maquina:docker CONTAINER_ID
+docker exec -it CONTAINER_ID bin/bash
+
+flask --app app run --host=0.0.0.0
+
+docker run -it -p 5002:5000 -v c:\users\drach\desktop\sistemas_distribuidos\tarea_2\servidorsopaipas\flask-crud-app:/home/projects/flask-crud-app --name test3 IMAGE_ID

@@ -1,0 +1,63 @@
+{% extends "base_template.html" %}
+
+{% block title %} Registro ventas {% endblock %}
+
+{% block content %}
+
+<div class="mx-3 my-3 col-12 pd-0 ">
+    <div class="row col-8 col-sm-12 justify-content-center ">
+        <div class="card text-white bg-dark col-md-6 col-sm-12">
+            <div class="card-header text-center">
+                <h3 class="d-inline">Registrar Venta</h3>
+            </div>
+            <div class="card-body">
+                <hr>
+                <form action="{{ url_for('recordSale') }}" method="post">
+                    <div class="form-row my-2">
+                        <div class="form-group col-md-6">
+                            <label for="inputClient">Cliente</label>
+                            <input name = "client" type="text" class="form-control" id="inputClient" placeholder="Cliente" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputCantidad">Cantidad sopaipillas</label>
+                            <input name = "cantidad" type="number" class="form-control" id="inputCantidad" placeholder="Cantidad" required>
+                        </div>
+                    </div>
+                    <div class="form-row my-2">
+                        <div class="form-group col-md-6">
+                            <label for="inputTime">Hora</label>
+                            <input name = "time" type="time" class="form-control" id="inputTime" placeholder="Hora" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputStock">Stock restante</label>
+                            <input name = "stock" type="number" class="form-control" id="inputStock" placeholder="Stock" required>
+                        </div>
+                    </div>
+                    <hr>
+                    <h5 class="my-1 mb-2">Ubicación carrito</h5>
+                    <div class="form-row my-2">
+                        <div class="form-group col-md-6">
+                            <label for="inputLong">Longitud</label>
+                            <input name = "longitud" type="text" class="form-control" id="inputLong" placeholder="12.0002" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputLatitud">Latitud</label>
+                            <input name = "latitud" type="text" class="form-control" id="inputLatitud" placeholder="-22.0202" required>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="/" class="btn btn-lg btn-block btn-danger">Atras</a>
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-lg btn-block btn-success">Registrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

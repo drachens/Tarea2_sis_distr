@@ -1,0 +1,13 @@
+{% extends "base_template.html" %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+<h1>ola</h1>
+<a href="/" class="btn btn-lg btn-block btn-danger">ATRAS</a>
+<li>
+    {% for i in range (0,len) %}
+    <ul>{{coordenadas[i]}}</ul>
+    {% endfor %}
+</li>
+{% endblock %}

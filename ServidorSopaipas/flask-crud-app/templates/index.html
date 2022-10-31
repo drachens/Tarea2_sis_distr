@@ -1,0 +1,37 @@
+{% extends "base_template.html" %}
+{% block title %} Inicio {% endblock %}
+{% block content %}
+        <div class="mx-3 my-3 col-12 pd-0 ">
+            <div class="row col-8 col-sm-12 justify-content-center ">
+                <div class="card text-white bg-dark col-md-6 col-sm-12">
+                    <div class="card-header text-center">
+                        <h3 class="d-inline">GREMIO SOPAIPILLEROS</h3>
+                    </div>
+                    <div class="card-body">
+                        <hr>
+                        <div class=" row align-self-center justify-content-center text-center">
+                            <a href="/addMember/" class="my-3 col-8 btn btn-success btn-lg btn-block">Registrar nuevo miembro</a>
+                        </div>
+                        <hr>
+                        <div class=" row align-self-center justify-content-center text-center">
+                            <a href="/recordSale/" class="my-3 col-8 btn btn-success btn-lg btn-block">Registrar nueva venta</a>
+                        </div>
+                        <hr>
+                        <div class=" row align-self-center justify-content-center text-center">
+                            <a href="/addFugitive/" class="my-3 col-8 btn btn-success btn-lg btn-block">Aviso de agente extraño</a>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="card-footer">
+                        <hr>
+                        <div class=" row align-self-center justify-content-center text-center">
+                            <a href="/ventasDiarias/" class="my-3 mx-1 col-4 btn btn-warning btn-lg btn-block">Ventas Diarias</a>
+                            <a href="/resposicionStock/" class="my-3 mx-1 col-4 btn btn-warning btn-lg btn-block">Reposicion Stock</a>
+                            <a href="/consumersView/" class="my-3 mx-1 col-4 btn btn-warning btn-lg btn-block">Ubicacion</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %} 

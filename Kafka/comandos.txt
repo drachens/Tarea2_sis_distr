@@ -1,0 +1,39 @@
+@dbc43c862776:/opt/bitnami/kafka/bin$ 
+
+kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic update-carrito
+kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic update-miembros
+
+In the consumer side,
+
+consumer = KafkaConsumer(
+       bootstrap_servers=['localhost:9092'],
+     auto_offset_reset='latest',
+     enable_auto_commit=True,
+     auto_commit_interval_ms =  5000,
+     max_poll_records = 100,
+     value_deserializer=lambda x: json.loads(x.decode('utf-8')))
+consumer.assign([TopicPartition('trial', 0)])
+
+
+./zookeeper-server-start.sh ../../kafka/config/zookeeper.properties
+kafka-console-consumer.sh --bootstrap-server localhost:9092 \
+    --topic update-carrito \
+    --from-beginning
+    
+kafka/bin/kafka-topics.sh --create \
+  --zookeeper localhost:2181 \
+  --replication-factor 1 --partitions 13 \
+  --topic my-topic
+
+kafka/bin/kafka-server-start.sh \
+    kafka/config/server.properties
+
+kafka-console-producer.sh \
+    --broker-list localhost:9092 \
+    --topic update-carrito
+
+kafka-topics.sh --delete --bootstrap-server localhost:9092 --topic your_topic_name
+
+kafka-console-consumer.sh --topic my-topic10 --bootstrap-server localhost:9092 --group order_application
+ kafka-consumer-groups.sh --list --bootstrap-server localhost:9092
+ kafka-consumer-groups.sh --describe --group order_application --members --bootstrap-server localhost:9092
